@@ -21,7 +21,11 @@ podTemplate(label: label,
                     sh 'apk --no-cache --update add make git gcc libc-dev'
                 }
             }
-
+	    stage('Test') {
+                container('go') {
+                    sh 'make test'
+                }
+	    }
             stage('Build') {
                 container('go') {
                     sh 'make build'
