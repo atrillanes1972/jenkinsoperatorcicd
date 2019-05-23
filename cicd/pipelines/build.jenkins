@@ -22,12 +22,6 @@ podTemplate(label: label,
                 }
             }
 
-#            stage('Test') {
-#                container('go') {
-#                    sh 'make test'
-#                }
-#            }
-
             stage('Build') {
                 container('go') {
                     sh 'make build'
